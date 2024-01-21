@@ -17,4 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	ros-iron-xacro \
 	&& rm -rf /var/lib/apt/lists/*
 
+# ros 2 env
+RUN echo "source /opt/ros/iron/setup.bash" >> /root/.bashrc
+
+# ros 2 workspace
 RUN mkdir -p /opt/ros_ws/src
