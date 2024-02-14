@@ -1,7 +1,11 @@
 FROM ros:iron-ros-core-jammy
 
+# update base system
+RUN apt-get update && apt-get upgrade -y --no-install-recommends
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
+	python3-colcon-devtool \
 	python3-colcon-package-selection \
 	python3-colcon-ros \
 	ros-iron-desktop \
