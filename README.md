@@ -15,6 +15,7 @@ docker pull ospreyrobotics/docker-ros2-iron
 ## Development Environment Usage
 Inside the container, there is an initial folder `/opt/ros_ws/src` that is intended for use for to build the [opsrey_ros](https://github.com/Osprey-Robotics/osprey_ros) package. This can either be downloaded into the container, or the recommended local mount, which allows for development using a local IDE. 
 
+### Run Command on Linux
 The following command will open a terminal to the newly created 
 container that uses the host computers network. It also assumes that the sources have been downloaded locally in `~/osprey_ros/` and shared as a volume in the folder inside the container.
 ```bash
