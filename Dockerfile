@@ -23,6 +23,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # ros 2 env
 RUN echo "source /opt/ros/iron/setup.bash" >> /root/.bashrc
+RUN echo "[[ -d /opt/ros_ws/install ]] && source /opt/ros_ws/install/setup.sh" \
+	>> /root/.bashrc
 
 # ros 2 workspace
 RUN mkdir -p /opt/ros_ws/src
+
+# common commands added to history
+RUN echo "ros2 run teleop_twist_keyboard teleop_twist_keyboard" \
+        >> /root/.bash_history
+RUN echo "ros2 launch osprey_ros gamepad.launch.py" \
+        >> /root/.bash_history
+RUN echo "ros2 launch osprey_ros osprey_ros.launch.py sim:=true" \
+        >> /root/.bash_history
+RUN echo "source /opt/ros_ws/install/setup.sh" \
+        >> /root/.bash_history
+RUN echo "rm -r build; colcon build --symlink-install --packages-select  osprey_ros" \
+        >> /root/.bash_history
+RUN echo "cd /opt/ros_ws" \
+        >> /root/.bash_history
